@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-image: linear-gradient(to right,#3498db,#2979ad);  
   max-height: 100vh;
+  color: red;
 }
 
 #login .container #login-row #login-column #login-box {
