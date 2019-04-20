@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ro">
+<head>
+    <meta charset="utf-8">
+    <title>Basic Page</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!--  Start link-uri externe   -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+          integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <!--  Sfarsit link-uri externe  -->
+</head>
+<body>
+
+<!--START SIDENAV-->
+<div id="overlay" onclick="off()"></div>
+<div class="wrapper">
+    <nav id="sidebar">
+        <!--<ul class="list-unstyled components">-->
+        <div class="sidebar-header">
+            <i class="fas fa-user-circle"></i><a href="#" class="font-weight-bold element"> Popescu Mihai</a>
+        </div>
+        <!--</ul>-->
+        <ul class="list-unstyled components">
+            <li class="font-weight-bold element">MENU</li>
+            <li><a href="#">ACASA</a></li>
+            <li><a href="#">VEZI ORARUL</a></li>
+            <li><a href="#">DOCUMENTE</a></li>
+            <li><a href="#">STATUS</a></li>
+            <li><a href="#">MAIL</a></li>
+        </ul>
+
+        <ul class="list-unstyled components">
+            <li class="font-weight-bold element">LINK-URILE MELE</li>
+            <li><a href="#">VEZI ORARUL</a></li>
+            <li><a href="#">STATUS</a></li>
+            <li><a href="#">MAIL</a></li>
+            <li><a href="#">CHAT</a></li>
+            <li><a href="#">GRUPA B2</a></li>
+            <li><a href="#">ARTICOL: Echipa de la FII, calificata...</a></li>
+            <li><a href="#">ARTICOL: Tutorial folosire GITHUB</a></li>
+        </ul>
+        <ul class="list-unstyled components footerNav">
+            <li class="font-weight-bold element">LOG OUT</li>
+        </ul>
+    </nav>
+    <!--SFARSIT SIDENAV-->
+
+
+    <!--START NAVIGATIE-->
+    <nav class="navbar navbar-expand-md navbar-dark ">
+        <a id="sidebarCollapse" class="sidenav-enable" onclick="on()">
+            <i class="fas fa-align-left"></i>
+        </a>
+        <div class="container">
+            <a class="navbar-brand" href="#FiiStudent">FII Student</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="form-inline ml-auto">
+                    <input class="form-control search-input" type="search" placeholder="" aria-label="Search">
+                    <button class="btn btn-light" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#world"><i class="fas fa-globe-europe"></i></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#notification"><i class="fas fa-bell"></i></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#user"><i class="fas fa-user"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--SFARSIT NAVIGATIE-->
+</div>
+
+
+<!--SCRIPTS-->
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
