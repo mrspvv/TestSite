@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="ro">
+<head>
+    <meta charset="utf-8">
+    <title>Orar</title>
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <!--  Start link-uri externe   -->
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+          integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+    <!--  Sfarsit link-uri externe  -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div id="overlay" onclick="off()"></div>
+<div class="wrapper">
+    <nav id="sidebar">
+        <!--<ul class="list-unstyled components">-->
+        <div class="sidebar-header">
+            <i class="fas fa-user-circle"></i><a href="#" class="font-weight-bold element"> Popescu Mihai</a>
+        </div>
+        <!--</ul>-->
+        <ul class="list-unstyled components">
+            <li class="font-weight-bold element">MENU</li>
+            <li><a href="#">ACASA</a></li>
+            <li><a href="#">VEZI ORARUL</a></li>
+            <li><a href="#">DOCUMENTE</a></li>
+            <li><a href="#">STATUS</a></li>
+            <li><a href="#">MAIL</a></li>
+        </ul>
+
+        <ul class="list-unstyled components">
+            <li class="font-weight-bold element">LINK-URILE MELE</li>
+            <li><a href="#">VEZI ORARUL</a></li>
+            <li><a href="#">STATUS</a></li>
+            <li><a href="#">MAIL</a></li>
+            <li><a href="#">CHAT</a></li>
+            <li><a href="#">GRUPA B2</a></li>
+            <li><a href="#">ARTICOL: Echipa de la FII, calificata...</a></li>
+            <li><a href="#">ARTICOL: Tutorial folosire GITHUB</a></li>
+        </ul>
+        <ul class="list-unstyled components footerNav">
+            <li class="font-weight-bold element">LOG OUT</li>
+        </ul>
+    </nav>
+    <!--SFARSIT SIDENAV-->
+
+
+    <!--START NAVIGATIE-->
+    <nav class="navbar navbar-expand-md navbar-dark ">
+        <a id="sidebarCollapse" class="sidenav-enable" onclick="on()">
+            <i class="fas fa-align-left"></i>
+        </a>
+        <div class="container">
+            <a class="navbar-brand" href="#FiiStudent">FII Student</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <form class="form-inline ml-auto">
+                    <input class="form-control search-input" type="search" placeholder="" aria-label="Search">
+                    <button class="btn btn-light" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#world"><i class="fas fa-globe-europe"></i></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#notification"><i class="fas fa-bell"></i></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#user"><i class="fas fa-user"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--SFARSIT NAVIGATIE-->
+
+    <!--START ORAR   -->
+    <div class="container">
+    <div class="titleAndButtons d-flex">
+        <form class="form-inline ml-auto"  method="get">
+            
+            <div class="input-group mb-2 mr-sm-2">
+                <select class="form-control custom-select butonOrar"name="an" id="YearSelector">
+                  <option selected>An</option>
+                  <option  value="1">1</option>
+                  <option  value="2">2</option>
+                  <option  value="3">3</option>
+                </select>
+            </div>
+            <div class="input-group mb-2 mr-sm-2">
+                <select class="form-control custom-select butonOrar" name="semian" id="semianSelector">
+                  <option selected>Semian</option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="E">E</option>
+                </select>
+            </div>
+            <div class="input-group mb-2 mr-sm-2">
+                <select class="form-control custom-select butonOrar" name="grupa" id="GroupSelector">
+                  <option selected>Grupa</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+            </div>
+           
+             <button type="submit" class="btn butonOrar mb-2" value="Submit" id="Go">GO</button>
+          </form>
+
+    </div>
+
+    <!-- Table for testing -->
+    <table class="table table-hover table-dark table-bordered ">
+        <thead>
+        <tr>
+            <th scope="col">
+                De la
+            </th>
+            <th scope="col">
+                Pana la
+            </th>
+            <th scope="col">
+                Disciplina
+            </th>
+            <th scope="col">
+                <i class="fas fa-minus-circle delete-column"></i>
+                Tip
+            </th>
+            <th scope="col">
+                <i class="fas fa-minus-circle delete-column"></i>
+                Profesor
+            </th>
+            <th scope="col">
+                <i class="fas fa-minus-circle delete-column"></i>
+                Sala
+            </th>
+            <th scope="col">
+                <i class="fas fa-minus-circle delete-column"></i>
+                Frecventa
+            </th>
+            <th scope="col" class="pachet" id="pachet">
+                <i class="fas fa-minus-circle delete-column"></i>
+                Pachet
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr id="luni">
+            <th colspan="8">Luni ( 6 ore )</th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr>
+            <td scope="row">lorems</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr id="marti">
+            <th colspan="8">Marti ( 8 ore )</th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr id="miercuri">
+            <th colspan="8">Miercuri ( 10 ore )</th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr id="joi">
+            <th colspan="8">Joi ( 4 ore )</th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr id="vineri">
+            <th colspan="8">Vineri ( 4 ore )</th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+        <tr>
+            <td scope="row">lorem</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <th class="delete-row">
+                <i class="fas fa-minus-circle"></i>
+            </th>
+        </tr>
+
+        </tbody>
+    </table>
+    </div>
+    <!--SFARSIT CONTAINER-->
+    <!--    FOOTER-->
+    <footer class="page-footer">
+        <div class="container">
+            <span class="footer-text text-white"> ©FII Student 2019</span>
+            <a href=" " class="footer-text text-white float-right">Ajutor</a>
+        </div>
+    </footer>
+</div>
+<!--    FOOTER-->
+
+<!--SCRIPTS-->
+<script src="js/jquery-3.3.1.slim.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/SelectoriOrar.js"></script>
+
+
+</body>
+</html>
